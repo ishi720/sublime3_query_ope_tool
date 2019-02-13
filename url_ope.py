@@ -23,14 +23,15 @@ class encodeUrl(sublime_plugin.TextCommand):
         # 選択範囲の確認
         checkSel(sel_area[0])
 
-        # 選択範囲の文字列取得
-        sel_string = self.view.substr(sel_area[0])
+        for i in range(len(sel_area)):
+            # 選択範囲の文字列取得
+            sel_string = self.view.substr(sel_area[i])
 
-        # urlエンコード
-        url = urllib.parse.quote(sel_string)
+            # urlエンコード
+            url = urllib.parse.quote(sel_string)
 
-        # 選択範囲と入替え
-        self.view.replace(edit, sel_area[0], url)
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], url)
 
 
 class decodeUrl(sublime_plugin.TextCommand):
@@ -43,14 +44,15 @@ class decodeUrl(sublime_plugin.TextCommand):
         # 選択範囲の確認
         checkSel(sel_area[0])
 
-        # 選択範囲の文字列取得
-        sel_string = self.view.substr(sel_area[0])
+        for i in range(len(sel_area)):
+            # 選択範囲の文字列取得
+            sel_string = self.view.substr(sel_area[i])
 
-        # urlデコード
-        url = urllib.parse.unquote(sel_string)
+            # urlデコード
+            url = urllib.parse.unquote(sel_string)
 
-        # 選択範囲と入替え
-        self.view.replace(edit, sel_area[0], url)
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], url)
 
 
 class getParaLineBreak(sublime_plugin.TextCommand):
@@ -63,14 +65,15 @@ class getParaLineBreak(sublime_plugin.TextCommand):
         # 選択範囲の確認
         checkSel(sel_area[0])
 
-        # 選択範囲の文字列取得
-        sel_string = self.view.substr(sel_area[0])
+        for i in range(len(sel_area)):
+            # 選択範囲の文字列取得
+            sel_string = self.view.substr(sel_area[i])
 
-        # 改行を入れる
-        url = re.sub('(\&|\?|#)', "\n\\1", sel_string)
+            # 改行を入れる
+            url = re.sub('(\&|\?|#)', "\n\\1", sel_string)
 
-        # 選択範囲と入替え
-        self.view.replace(edit, sel_area[0], url)
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], url)
 
 
 class removeLineBreak(sublime_plugin.TextCommand):
@@ -83,11 +86,12 @@ class removeLineBreak(sublime_plugin.TextCommand):
         # 選択範囲の確認
         checkSel(sel_area[0])
 
-        # 選択範囲を文字列として取得
-        sel_string = self.view.substr(sel_area[0])
+        for i in range(len(sel_area)):
+            # 選択範囲を文字列として取得
+            sel_string = self.view.substr(sel_area[i])
 
-        # 改行を削る
-        url = re.sub('\n', '', sel_string)
+            # 改行を削る
+            url = re.sub('\n', '', sel_string)
 
-        # 選択範囲と入替え
-        self.view.replace(edit, sel_area[0], url)
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], url)
