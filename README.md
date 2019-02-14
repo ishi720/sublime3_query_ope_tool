@@ -10,7 +10,7 @@ SublimeText3でurlの文字列操作を行えます。
 
 - SublimeText3のPackagesフォルダを開きます
 
-> 例: C:\Users\%username%\AppData\Roaming\Sublime Text 3\Packages
+> 例: C:\Users\\%username%\AppData\Roaming\Sublime Text 3\Packages
 
 - git cloneします
 
