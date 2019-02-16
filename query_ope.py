@@ -76,6 +76,35 @@ class getParaLineBreak(sublime_plugin.TextCommand):
             self.view.replace(edit, sel_area[i], url)
 
 
+
+class sqlLineBreak(sublime_plugin.TextCommand):
+    """SQLを改行する
+    """
+    def run(self, edit):
+        # 選択範囲の取得
+        sel_area = self.view.sel()
+
+        # 選択範囲の確認
+        checkSel(sel_area[0])
+
+        for i in range(len(sel_area)):
+            # 選択範囲の文字列取得
+            sel_string = self.view.substr(sel_area[i])
+
+            keyword_list = [
+                'SELECT','FROM','WHERE','AND','OR','ORDER BY','LIMIT'
+            ]
+            regexp = '(' + "|".join(keyword_list) + ')'
+
+            # 改行を入れる
+            url = re.sub(regexp, "\n\\1", sel_string, flags=re.IGNORECASE)
+
+            # 戦闘の改行を削る
+            url = re.sub('^\n', '', url)
+
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], url)
+
 class removeLineBreak(sublime_plugin.TextCommand):
     """改行を削除する
     """
