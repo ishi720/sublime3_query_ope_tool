@@ -4,5 +4,5 @@
     {"caption":"ope url line break","command":"get_para_line_break"},
     {"caption":"ope url remove line break","command":"remove_line_break"},
     {"caption":"ope sql line break","command":"sql_line_break"},
-    {"caption":"ope sql remove line break","command":"remove_line_break"},
+    {"caption":"ope sql remove line break","command":"sql_remove_line_break"},
 ]
