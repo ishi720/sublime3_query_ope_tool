@@ -25,7 +25,22 @@ git clone https://github.com/ishi720/sublime3_query_ope_tool.git
 - SublimeText3上で対象の文字列を選択
 - Ctrl + Shift + p 
 - コマンド実行
-  - ope url encode: URLのエンコード
-  - ope url decode: URLのデコード
-  - ope url line break: URLをgetパラメータごとに改行
-  - ope url remove line break: 改行があるURLの改行を削除
+
+
+### コマンド
+
+- url操作系
+
+| コマンド | 実行内容 |
+|:-|:- |
+|ope url encode|URLのエンコード|
+|ope url decode|URLのデコード|
+|ope url line break|URLをgetパラメータごとに改行|
+|ope url remove line break|URLに含まれる改行を削除|
+
+- sql操作系
+
+| コマンド | 実行内容 |
+|:-|:- |
+|ope sql line break|sqlを改行|
+|ope sql remove line break|sqlに含まれる改行を削除|
