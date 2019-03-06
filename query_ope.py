@@ -97,6 +97,38 @@ class removeLineBreak(sublime_plugin.TextCommand):
             self.view.replace(edit, sel_area[i], url)
 
 
+class bookmarkletEdit(sublime_plugin.TextCommand):
+    """ブックマークレットを作成する
+    """
+    def run(self, edit):
+        # 選択範囲の取得
+        sel_area = self.view.sel()
+
+        # 選択範囲の確認
+        checkSel(sel_area[0])
+
+        for i in range(len(sel_area)):
+            # 選択範囲を文字列として取得
+            sel_string = self.view.substr(sel_area[i])
+
+            #コメントアウトを削る
+            code = re.sub('/\*.*?\*/', '', sel_string, flags=(re.MULTILINE | re.DOTALL))
+            code = re.sub('//.*', '', code)
+
+            # 改行を削る
+            code = re.sub('\n', '', code)
+
+            # urlをエンコードする
+            code = urllib.parse.quote(code)
+
+            # ブックマークレットの形式にする
+            code = 'javascript:(function(){' + code + '})();'
+
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], code)
+
+
+
 class sqlLineBreak(sublime_plugin.TextCommand):
     """SQLを改行する
     """
