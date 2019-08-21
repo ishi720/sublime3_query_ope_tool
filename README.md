@@ -44,3 +44,9 @@ git clone https://github.com/ishi720/sublime3_query_ope_tool.git
 |:-|:- |
 |ope sql line break|sqlを改行|
 |ope sql remove line break|sqlに含まれる改行を削除|
+
+- javascriptのcodeをブックマークレット化
+
+| コマンド | 実行内容 |
+|:-|:- |
+|ope bookmarklet edit|ブックマークレットに変換|
