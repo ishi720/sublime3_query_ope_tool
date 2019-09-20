@@ -13,6 +13,59 @@ def checkSel(sel_range):
         exit()
 
 
+class escapeXml(sublime_plugin.TextCommand):
+    """XML特殊文字をエスケープ
+    """
+    def run(self, edit):
+        # 選択範囲の取得
+        sel_area = self.view.sel()
+
+        # 選択範囲の確認
+        checkSel(sel_area[0])
+
+        for i in range(len(sel_area)):
+            # 選択範囲の文字列取得
+            sel_string = self.view.substr(sel_area[i])
+
+            text = sel_string
+            
+            text = re.sub( '&', '&amp;', text) # &は最初に変換する
+            text = re.sub( '<', '&lt;', text)
+            text = re.sub( '>', '&gt;', text)
+            text = re.sub( '"', '&quot;', text)
+            text = re.sub( '\'', '&apos;', text)
+
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], text)
+
+
+class unescapeXml(sublime_plugin.TextCommand):
+    """XML特殊文字を戻す
+    """
+    def run(self, edit):
+        # 選択範囲の取得
+        sel_area = self.view.sel()
+
+        # 選択範囲の確認
+        checkSel(sel_area[0])
+
+        for i in range(len(sel_area)):
+            # 選択範囲の文字列取得
+            sel_string = self.view.substr(sel_area[i])
+
+            text = sel_string
+            
+            text = re.sub( '&lt;', '<', text)
+            text = re.sub( '&gt;', '>', text)
+            text = re.sub( '&quot;','"', text)
+            text = re.sub( '&apos;', '\'', text)
+            text = re.sub( '&amp;', '&', text) # &amp;は最後に変換する
+
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], text)
+
+
+
 class encodeUrl(sublime_plugin.TextCommand):
     """urlのエンコードする
     """
