@@ -197,7 +197,7 @@ class sqlLineBreak(sublime_plugin.TextCommand):
             sel_string = self.view.substr(sel_area[i])
 
             keyword_list = [
-                'SELECT','UPDATE','SET','INSERT INTO','VALUES','DELETE','ADD',
+                'SELECT','UPDATE','SET','INSERT INTO','VALUES','DELETE','ADD','CHANGE',
                 'FROM','WHERE','AND','OR','ORDER BY','GROUP BY','LIMIT','OFFSET'
             ]
             regexp = '(' + " |".join(keyword_list) + ')'
