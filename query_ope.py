@@ -198,7 +198,8 @@ class sqlLineBreak(sublime_plugin.TextCommand):
 
             keyword_list = [
                 'SELECT','UPDATE','SET','INSERT INTO','VALUES','DELETE','ADD','CHANGE',
-                'FROM','WHERE','AND','OR','ORDER BY','GROUP BY','HAVING','LIMIT','OFFSET'
+                'FROM','WHERE','AND','OR','ORDER BY','GROUP BY','HAVING','LIMIT','OFFSET',
+                'CREATE TABLE','ENGINE'
             ]
             regexp = '(' + " |".join(keyword_list) + ')'
 
