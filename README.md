@@ -32,7 +32,7 @@ git clone https://github.com/ishi720/sublime3_query_ope_tool.git
 - url操作系
 
 | コマンド | 実行内容 |
-|:-|:- |
+|:-|:-|
 |ope url encode|URLのエンコード|
 |ope url decode|URLのデコード|
 |ope url line break|URLをgetパラメータごとに改行|
@@ -41,12 +41,21 @@ git clone https://github.com/ishi720/sublime3_query_ope_tool.git
 - sql操作系
 
 | コマンド | 実行内容 |
-|:-|:- |
+|:-|:-|
 |ope sql line break|sqlを改行|
 |ope sql remove line break|sqlに含まれる改行を削除|
+
+- 表テーブルの変換
+
+| コマンド | 実行内容 |
+|:-|:-|
+|ope table markdown to excel|markdownのテーブルを<br>Excelの表に貼り付けられる形式に変換|
+
 
 - javascriptのcodeをブックマークレット化
 
 | コマンド | 実行内容 |
-|:-|:- |
+|:-|:-|
 |ope bookmarklet edit|ブックマークレットに変換|
+markdownのテーブルを
+Excelの表に貼り付けられる形式に変換

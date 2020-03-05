@@ -8,4 +8,5 @@
     {"caption":"ope bookmarklet edit","command":"bookmarklet_edit"},
     {"caption":"ope xml escape","command":"escape_xml"},
     {"caption":"ope xml unescape","command":"unescape_xml"},
+    {"caption":"ope table markdown >> excel","command":"convert_table_md_to_excel"},
 ]

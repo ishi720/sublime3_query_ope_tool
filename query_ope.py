@@ -233,3 +233,28 @@ class sqlRemoveLineBreak(sublime_plugin.TextCommand):
 
             # 選択範囲と入替え
             self.view.replace(edit, sel_area[i], url)
+
+
+class convertTableMdToExcel(sublime_plugin.TextCommand):
+    """markdownテーブルをExcelテーブルに変換
+    """
+    def run(self, edit):
+        # 選択範囲の取得
+        sel_area = self.view.sel()
+
+        # 選択範囲の確認
+        checkSel(sel_area[0])
+
+        for i in range(len(sel_area)):
+
+            # 選択範囲を文字列として取得
+            sel_string = self.view.substr(sel_area[i])
+
+            # 整形する
+            url = re.sub('\|.*?[-:]+?.*?\|.*?\n', "", sel_string, flags=re.MULTILINE) # |--|--|の行を削る
+            url = re.sub(' *\| *', "\t", url, flags=re.IGNORECASE) # パイプをタブに変換する
+            url = re.sub('^\t', "", url, flags=re.MULTILINE) # 先頭のタブを削る
+            url = re.sub('\t$', "", url, flags=re.MULTILINE) # 末尾のタブを削る
+
+            # 選択範囲と入替え
+            self.view.replace(edit, sel_area[i], url)
