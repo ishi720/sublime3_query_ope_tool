@@ -251,7 +251,7 @@ class convertTableMdToExcel(sublime_plugin.TextCommand):
             sel_string = self.view.substr(sel_area[i])
 
             # 整形する
-            url = re.sub('\|.*?[-:]+?.*?\|.*?\n', "", sel_string, flags=re.MULTILINE) # |--|--|の行を削る
+            url = re.sub('\|\s*?[-:]+?\s*?\|.*?\n', "", sel_string, flags=re.MULTILINE) # |--|--|の行を削る
             url = re.sub(' *\| *', "\t", url, flags=re.IGNORECASE) # パイプをタブに変換する
             url = re.sub('^\t', "", url, flags=re.MULTILINE) # 先頭のタブを削る
             url = re.sub('\t$', "", url, flags=re.MULTILINE) # 末尾のタブを削る
