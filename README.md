@@ -50,6 +50,7 @@ git clone https://github.com/ishi720/sublime3_query_ope_tool.git
 | コマンド | 実行内容 |
 |:-|:-|
 |ope table markdown to excel|markdownのテーブルを<br>Excelの表に貼り付けられる形式に変換|
+|ope table excel to markdown|Excelの表を<br>markdownのテーブルに変換|
 
 
 - javascriptのcodeをブックマークレット化
@@ -57,5 +58,3 @@ git clone https://github.com/ishi720/sublime3_query_ope_tool.git
 | コマンド | 実行内容 |
 |:-|:-|
 |ope bookmarklet edit|ブックマークレットに変換|
-markdownのテーブルを
-Excelの表に貼り付けられる形式に変換
