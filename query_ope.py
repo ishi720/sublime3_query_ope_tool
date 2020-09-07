@@ -198,16 +198,19 @@ class sqlLineBreak(sublime_plugin.TextCommand):
 
             keyword_list = [
                 'SELECT','UPDATE','SET','INSERT INTO','VALUES','DELETE','ADD','CHANGE',
-                'FROM','INNER JOIN','WHERE','AND','OR','ORDER BY','GROUP BY','HAVING','LIMIT','OFFSET',
+                'FROM','INNER JOIN','ON','WHERE','AND','OR','ORDER BY','GROUP BY','HAVING','LIMIT','OFFSET',
                 'CREATE TABLE','UNION','EXCEPT','INTERSECT','ENGINE'
             ]
-            regexp = '(' + " |".join(keyword_list) + ')'
+            regexp = '(' + " | ".join(keyword_list) + ')'
 
             # 改行を入れる
             sql = re.sub(regexp, "\n\\1", sel_string, flags=re.IGNORECASE)
 
             # 先頭の改行を削る
             sql = re.sub('^\n', '', sql)
+
+            # 各行の先頭スペースを削る
+            sql = re.sub('^ ', '', sql, flags=re.MULTILINE)
 
             # 選択範囲と入替え
             self.view.replace(edit, sel_area[i], sql)
