@@ -165,8 +165,9 @@ class bookmarkletEdit(sublime_plugin.TextCommand):
             sel_string = self.view.substr(sel_area[i])
 
             #コメントアウトを削る
-            code = re.sub('/\*.*?\*/', '', sel_string, flags=(re.MULTILINE | re.DOTALL))
-            code = re.sub('//.*', '', code)
+            code = re.sub('\/\*.*?\*\/', '', sel_string, flags=(re.MULTILINE | re.DOTALL))
+            code = re.sub('^\s*\/\/.*?$', '', code, flags=(re.MULTILINE | re.DOTALL))
+            code = re.sub(';\s*\/\/.*', ';', code)
 
             # 改行を削る
             code = re.sub('\n', '', code)
