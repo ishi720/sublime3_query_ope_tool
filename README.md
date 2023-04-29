@@ -1,6 +1,6 @@
 # sublime3_query_ope_tool
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8b238fa50f7d4928a52b665b808c6fe1)](https://www.codacy.com/app/ishi720/sublime3_query_ope_tool?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ishi720/sublime3_query_ope_tool&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c43257089f8e45d3b91d411b63e2b84f)](https://app.codacy.com/gh/ishi720/sublime3_query_ope_tool/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ### 概要
 
